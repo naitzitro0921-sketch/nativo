@@ -1,0 +1,423 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Nativo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+/* Layout: dark forest bands (hero, historia, visita) frame one pale-lime band for the carta, the same pairing as the printed menu. */
+:root {
+  --forest: #232c19;
+  --forest-raise: #2d3820;
+  --moss: #3f4c2e;
+  --sage: #9aa57d;
+  --lime: #d5dfa9;
+  --ink: #1f2815;
+  --ink-soft: #4e5a37;
+  --font-script: 'Sacramento', 'Brush Script MT', cursive;
+  --font-display: 'Marcellus', 'Times New Roman', serif;
+  --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  background: var(--forest);
+  color: var(--lime);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.band-light a:focus-visible, .band-light button:focus-visible { outline-color: var(--ink); }
+h1, h2, h3, p, dl, dd { margin: 0; }
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero-bg {
+  position: absolute;
+  right: -90px;
+  top: 30px;
+  width: 560px;
+  max-width: none;
+  color: var(--moss);
+  pointer-events: none;
+}
+.hero .wrap { position: relative; }
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 28px;
+  padding-block: 22px;
+}
+.nav .mark { font-family: var(--font-script); font-size: 34px; line-height: 1; text-decoration: none; }
+.nav ul { display: flex; flex-wrap: wrap; gap: 6px 26px; list-style: none; margin: 0; padding: 0; }
+.nav ul a { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; padding-block: 6px; display: inline-block; }
+.nav ul a:hover { text-decoration: underline; text-underline-offset: 6px; }
+.hero-body { padding-block: 56px 96px; max-width: 640px; }
+.hero-sprig { width: 54px; color: var(--lime); display: block; margin-bottom: -6px; margin-left: 78px; }
+.hero h1 {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: clamp(88px, 22vw, 190px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+.hero .tagline { margin-top: 10px; font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; }
+.hero .place { margin-top: 6px; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); }
+.hero .lead { margin-top: 26px; max-width: 46ch; font-size: 18px; color: var(--lime); }
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 26px;
+  border: 1px solid var(--lime);
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.cta:hover { background: var(--lime); color: var(--forest); }
+
+/* Historia */
+.story { padding-block: 88px; background: var(--forest-raise); }
+.story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 40px 72px; }
+.story h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(32px, 5vw, 48px); line-height: 1.15; text-wrap: balance; margin-top: 14px; }
+.story .body { display: grid; gap: 20px; max-width: 60ch; }
+.story .body p { color: var(--lime); }
+.story .welcome { font-family: var(--font-display); font-size: 24px; line-height: 1.3; }
+
+.origins { padding-block: 80px 88px; }
+.origins h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 4vw, 36px); margin-top: 12px; text-wrap: balance; }
+.origins dl { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 28px 32px; }
+.origins .item { border-top: 1px solid var(--moss); padding-top: 14px; min-width: 0; }
+.origins dt { font-family: var(--font-display); font-size: 22px; }
+.origins dd { margin-top: 4px; font-size: 14px; color: var(--sage); }
+
+/* Carta */
+.band-light { background: var(--lime); color: var(--ink); padding-block: 88px 96px; }
+.band-light .eyebrow { color: var(--ink-soft); }
+.carta-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 40px; }
+.carta-head h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(56px, 12vw, 104px); line-height: 1; color: var(--ink); margin-top: 8px; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.chip:hover { background: rgba(31, 40, 21, 0.1); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--lime); }
+.count { margin-top: 18px; font-size: 13px; color: var(--ink-soft); }
+
+.menu-group { margin-top: 44px; }
+.menu-group h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; display: inline-block; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.dish {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 32px;
+  padding-block: 28px;
+  border-bottom: 1px solid rgba(31, 40, 21, 0.28);
+}
+.dish h4 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 28px; line-height: 1.2; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.tag { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border: 1px solid var(--ink); border-radius: 999px; }
+.tag.fish { background: var(--ink); color: var(--lime); }
+.dish .desc { margin-top: 8px; max-width: 58ch; }
+.dish .contains { margin-top: 8px; font-size: 14px; font-style: italic; color: var(--ink-soft); }
+.dish .side { text-align: right; align-self: start; }
+.price { font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.kcal { font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+.drinks { margin-top: 64px; }
+.drinks > h3 { font-family: var(--font-display); font-weight: 400; font-size: 32px; display: inline-block; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.drink-cols { margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px 48px; }
+.drink-cols h4 { margin: 0 0 8px; font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); }
+.drink-cols ul { list-style: none; margin: 0; padding: 0; }
+.drink-cols li { display: flex; justify-content: space-between; gap: 16px; padding-block: 9px; border-bottom: 1px dotted rgba(31, 40, 21, 0.45); }
+.drink-cols .p { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.notes { margin-top: 44px; font-size: 14px; color: var(--ink-soft); max-width: 70ch; display: grid; gap: 6px; }
+
+/* Visita */
+.visit { padding-block: 88px 72px; }
+.visit h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(30px, 5vw, 44px); margin-top: 12px; text-wrap: balance; }
+.visit dl { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 32px; }
+.visit .item { border: 1px solid var(--moss); padding: 18px 20px; min-width: 0; }
+.visit dt { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); }
+.visit dd { margin-top: 6px; font-family: var(--font-display); font-size: 22px; }
+.visit dd small { display: block; margin-top: 2px; font-family: var(--font-body); font-size: 13px; color: var(--sage); }
+
+footer { border-top: 1px solid var(--moss); padding-block: 28px 40px; font-size: 13px; color: var(--sage); }
+footer .sig { font-family: var(--font-script); font-size: 30px; color: var(--lime); line-height: 1.1; }
+footer p + p { margin-top: 4px; }
+
+@media (max-width: 760px) {
+  .story-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-bg { width: 420px; right: -150px; top: 80px; }
+  .hero-sprig { margin-left: 60px; }
+  .dish { grid-template-columns: minmax(0, 1fr); }
+  .dish .side { text-align: left; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sprig" viewBox="0 0 120 160">
+    <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M60 156 C58 116 62 70 60 22"/>
+      <path d="M60 112 C30 107 19 87 24 70 C46 72 58 90 60 112Z"/>
+      <path d="M60 100 C90 95 101 75 96 58 C74 60 62 78 60 100Z"/>
+      <path d="M60 78 C38 74 30 58 34 44 C50 46 58 62 60 78Z"/>
+      <path d="M60 62 C82 58 90 44 86 30 C70 32 62 48 60 62Z"/>
+      <path d="M60 24 C51 16 53 7 60 2 C67 7 69 16 60 24Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="hero">
+  <svg class="hero-bg" viewBox="0 0 120 160" aria-hidden="true"><use href="#sprig"/></svg>
+  <div class="wrap">
+    <nav class="nav" aria-label="Principal">
+      <a class="mark" href="#top">Nativo</a>
+      <ul>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#carta">Carta</a></li>
+        <li><a href="#visitanos">Visítanos</a></li>
+      </ul>
+    </nav>
+    <div class="hero-body" id="top">
+      <svg class="hero-sprig" viewBox="0 0 120 160" aria-hidden="true"><use href="#sprig"/></svg>
+      <h1>Nativo</h1>
+      <p class="tagline">Cocina natural de autor</p>
+      <p class="place">Barrio Obrero · Bello</p>
+      <p class="lead">Ingredientes de nuestra tierra, técnica actual y platos para comer con conciencia: menos procesado, nada de desperdicio y todo el sabor de lo real.</p>
+      <a class="cta" href="#carta">Ver la carta</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="story" id="historia">
+    <div class="wrap story-grid">
+      <div>
+        <p class="eyebrow">Nuestra historia</p>
+        <h2>Volver a lo esencial.</h2>
+      </div>
+      <div class="body">
+        <p>Cocinar con lo que da la tierra, respetar su tiempo y dejar que cada producto cuente su propia historia.</p>
+        <p>Esta carta nació en nuestra cocina, entre ensayos, errores y pequeños hallazgos. Cada plato une lo que somos con lo que otras cocinas del mundo nos enseñaron, sin soltar nunca la raíz.</p>
+        <p>Lo frío y lo caliente, lo crujiente y lo suave, lo dulce y lo ácido se encuentran en cada plato, para que comer sea algo que se recuerda.</p>
+        <p>No venimos a decirte cómo comer, venimos a invitarte a sentir. Toma asiento, prueba sin prisa y deja que la mesa haga lo suyo.</p>
+        <p class="welcome">Bienvenido a lo nuestro. Bienvenido a Nativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="origins" aria-labelledby="origenes">
+    <div class="wrap">
+      <p class="eyebrow">De dónde viene</p>
+      <h2 id="origenes">Cada ingrediente trae su propio camino.</h2>
+      <dl>
+        <div class="item"><dt>Cidra</dt><dd>Fruto de una enredadera originaria de Mesoamérica. También se conoce como chayote.</dd></div>
+        <div class="item"><dt>Arveja</dt><dd>Llegó a América con los españoles y hoy es básica en la cocina andina.</dd></div>
+        <div class="item"><dt>Quinua</dt><dd>Grano andino con miles de años de cultivo.</dd></div>
+        <div class="item"><dt>Marañón</dt><dd>Nativo del noreste de Brasil. Los portugueses lo llevaron a África y la India en el siglo XVI.</dd></div>
+        <div class="item"><dt>Panela</dt><dd>Jugo de caña cocido y moldeado en trapiches. La caña llegó a América con los españoles.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band-light" id="carta" aria-labelledby="carta-titulo">
+    <div class="wrap">
+      <div class="carta-head">
+        <div>
+          <p class="eyebrow">Menú</p>
+          <h2 id="carta-titulo">Carta</h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar por tipo de plato">
+          <button type="button" class="chip" data-filter="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-filter="vegano" aria-pressed="false">Vegano</button>
+          <button type="button" class="chip" data-filter="vegetariano" aria-pressed="false">Vegetariano</button>
+          <button type="button" class="chip" data-filter="animal" aria-pressed="false">Pescetariano y flexitariano</button>
+        </div>
+      </div>
+      <p class="count" id="count" aria-live="polite">Mostrando 13 platos</p>
+
+      <div class="menu-group" id="g-entradas">
+        <h3>Entradas</h3>
+        <div id="list-entradas"></div>
+      </div>
+
+      <div class="menu-group" id="g-fuertes">
+        <h3>Fuertes</h3>
+        <div id="list-fuertes"></div>
+      </div>
+
+      <div class="drinks">
+        <h3>Bebidas</h3>
+        <div class="drink-cols">
+          <div>
+            <h4>Sodas</h4>
+            <ul>
+              <li><span>Soda Maracuyá</span><span class="p">$12.000</span></li>
+              <li><span>Soda Lychee</span><span class="p">$12.000</span></li>
+              <li><span>Soda Sandía y Limón</span><span class="p">$12.000</span></li>
+              <li><span>Soda Hierbabuena</span><span class="p">$12.000</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Jugos</h4>
+            <ul>
+              <li><span>Maracuyá</span><span class="p">$10.000</span></li>
+              <li><span>Piña</span><span class="p">$8.000</span></li>
+              <li><span>Sandía</span><span class="p">$8.000</span></li>
+              <li><span>Limonada</span><span class="p">$8.000</span></li>
+              <li><span>Mora</span><span class="p">$10.000</span></li>
+              <li><span>Fresa</span><span class="p">$10.000</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Bar</h4>
+            <ul>
+              <li><span>Cerveza Nacional</span><span class="p">$7.000</span></li>
+              <li><span>Vino (copa)</span><span class="p">$20.000</span></li>
+              <li><span>Sangría (jarra)</span><span class="p">$60.000</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <p>Precios en pesos colombianos. Las kcal son aproximadas y por porción.</p>
+        <p>¿Alguna alergia o restricción alimentaria? Cuéntale a tu mesero antes de ordenar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visitanos" aria-labelledby="visita-titulo">
+    <div class="wrap">
+      <p class="eyebrow">Visítanos</p>
+      <h2 id="visita-titulo">Estamos en Barrio Obrero, Bello.</h2>
+      <dl>
+        <div class="item"><dt>Dónde</dt><dd>Barrio Obrero<small>Bello, Antioquia. Dirección exacta por confirmar.</small></dd></div>
+        <div class="item"><dt>Horarios</dt><dd>2:00 p. m. a 11:00 p. m.<small>Días por confirmar.</small></dd></div>
+        <div class="item"><dt>Reservas</dt><dd><a href="https://www.instagram.com/nativo.colma/" target="_blank" rel="noopener">@nativo.colma</a><small>Escríbenos por mensaje directo en Instagram.</small></dd></div>
+      </dl>
+      <a class="cta" href="https://www.google.com/maps/search/?api=1&query=Barrio+Obrero%2C+Bello%2C+Antioquia" target="_blank" rel="noopener">Ver en el mapa</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="sig">Una carta de</p>
+    <p>David Monsalve · Sebastián Ortiz · Jerónimo Jaramillo</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var DISHES = [
+    { s: 'entradas', g: 'vegetariano', name: 'Torre Tropical', tag: 'Ovolactovegetariano', price: '$24.000', kcal: 560,
+      desc: 'Aguacate, pepino y huevo picados en pequeños cubos, mezclados con una crema suave de queso, coco y limón. Entre capa y capa van tomates cherry cocinados en aceite de coco hasta quedar tiernos y dulces. Se termina con una vinagreta de miel, limón y perejil.',
+      contains: 'huevo, leche, coco.' },
+    { s: 'entradas', g: 'vegano', name: 'Cidra al Sol', tag: 'Vegano', price: '$18.000', kcal: 100,
+      desc: 'Puré de cidra que se sirve frío. Coronado con piña sellada en su propia azúcar, cebolla morada encurtida en zumo de piña con limón, y semillas de girasol tostadas y finamente picadas.',
+      contains: 'semillas de girasol.' },
+    { s: 'entradas', g: 'vegetariano', name: 'Cuadro Verde', tag: 'Apivegetariano', price: '$26.000', kcal: 520,
+      desc: 'Aguacate, tofu y melón cortados en cubos y mezclados con hierbas frescas y un toque de limón. Se sirve frío, cubierto con semillas de girasol tostadas y un aderezo de agraz y manzana verde caramelizada que le da un final dulce y ácido.',
+      contains: 'soya, ajo, ají.' },
+    { s: 'entradas', g: 'animal', name: 'Filo del Egeo', tag: 'Pescetariano', price: '$28.000', kcal: 330, fish: true,
+      desc: 'Dos triángulos de finas hojas de masa rellenos de merluza, espinaca y queso ricotta, pintados con mantequilla de finas hierbas y horneados con queso por encima hasta quedar dorados y crujientes. Se acompañan de una salsa dulce de vino blanco y panela.',
+      contains: 'gluten, pescado, leche, sulfitos.' },
+    { s: 'entradas', g: 'vegano', name: 'Campo Suave', tag: 'Vegano', price: '$22.000', kcal: 70,
+      desc: 'Puré cremoso de cidra y arveja, coronado con fajitas de tomate fresco, cilantro y ajonjolí. Un plato de olla campesina, suave y fresco.',
+      contains: 'sésamo.' },
+    { s: 'entradas', g: 'vegano', name: 'Salto de Huerta', tag: 'Vegano', price: '$22.000', kcal: 305,
+      desc: 'Col china salteada al wok con pimentón rojo, brócoli blanqueado y champiñones frescos, aromatizada con ajo y jengibre que aportan un toque ligeramente picante y aromático. Se termina con un aceite de oliva infusionado con cilantro fresco. Un plato sencillo, crocante y aromático.',
+      contains: 'ajo, pimentón, hongos.' },
+
+    { s: 'fuertes', g: 'vegetariano', name: 'Dulce Raíz', tag: 'Apivegetariano', price: '$30.000', kcal: 165,
+      desc: 'Puré de camote suave y ligeramente dulce, servido frío como base. Coronado con cubos de tofu dorados al sartén y bañados en una salsa agridulce de vinagre balsámico y miel, acompañados de tiras finas de repollo morado y rodajas de zanahoria baby. Un plato colorido donde lo dulce y lo ácido se encuentran.',
+      contains: 'soya, sulfitos.' },
+    { s: 'fuertes', g: 'vegano', name: 'Bosque y Trapiche', tag: 'Vegano', price: '$39.000', kcal: 320,
+      desc: 'Salteado al wok de zucchini, espárragos, pimentón rojo y orellanas con ajo y aceite de oliva, acompañado de medallones de plátano maduro horneados con panela hasta caramelizar. Lo salado del monte y lo dulce del trapiche en un mismo plato.',
+      contains: 'ajo, pimentón, hongos.' },
+    { s: 'fuertes', g: 'animal', name: 'Mar y Huerta', tag: 'Pescetariano', price: '$49.000', kcal: 840, fish: true,
+      desc: 'Filete de merluza empanizado y sellado sobre puré de berenjena tatemada con queso ibérico, trazado con salsa verde de espinaca, perejil y panela.',
+      contains: 'pescado, gluten, leche.' },
+    { s: 'fuertes', g: 'animal', name: 'Atún Nativo', tag: 'Pescetariano', price: '$49.000', kcal: 540, fish: true,
+      desc: 'Cubos de atún sellados con media costra de mostaza Dijon y marañón tostado, sobre quinua cremosa en leche de coco y flor de Jamaica, con crocante de ocañera, carambolo y melón.',
+      contains: 'pescado, frutos secos (marañón), mostaza, coco.' },
+    { s: 'fuertes', g: 'animal', name: 'El Integral', tag: 'Flexitariano', price: '$32.000', kcal: 485, fish: true,
+      desc: 'Pan integral tostado relleno de una carne jugosa hecha con cerdo y lentejas, sellada en el sartén. Lleva queso costeño con finas hierbas y un aderezo de manzana verde caramelizada con miel, panela y canela que le da un contraste dulce.',
+      contains: 'gluten, leche.' },
+    { s: 'fuertes', g: 'vegano', name: 'Barca de la Huerta', tag: 'Vegano', price: '$30.000', kcal: 200,
+      desc: 'Zucchini verde y amarillo relleno con una mezcla de frijol cabecita negra, champiñones, puerro y vegetales salteados con ajo y pimentón. Se acompaña con una cama de acelgas salteadas con jengibre, que aportan frescura y un toque aromático, logrando una combinación equilibrada de sabores, colores y texturas.',
+      contains: 'ajo, pimentón, hongos.' },
+    { s: 'fuertes', g: 'vegetariano', name: 'Crep de la Finca', tag: 'Ovovegetariano', price: '$30.000', kcal: 580,
+      desc: 'Dos creps delgados de avena, banano y huevo, rellenos de frijol blanquillo cocinado en jugo de naranja y mango hasta quedar suave como una crema, con su punto de sal. Se acompañan de fresas, manzana verde picada y semillas de chía. Un plato fuerte donde lo salado y lo dulce se equilibran.',
+      contains: 'huevo, gluten (avena).' }
+  ];
+
+  var lists = { entradas: document.getElementById('list-entradas'), fuertes: document.getElementById('list-fuertes') };
+  var groups = { entradas: document.getElementById('g-entradas'), fuertes: document.getElementById('g-fuertes') };
+  var count = document.getElementById('count');
+  var chips = document.querySelectorAll('.chip');
+
+  DISHES.forEach(function (d) {
+    var a = document.createElement('article');
+    a.className = 'dish';
+    a.dataset.group = d.g;
+    a.innerHTML =
+      '<div>' +
+        '<h4>' + d.name + ' <span class="tag' + (d.fish ? ' fish' : '') + '">' + d.tag + '</span></h4>' +
+        '<p class="desc">' + d.desc + '</p>' +
+        '<p class="contains">Contiene: ' + d.contains + '</p>' +
+      '</div>' +
+      '<div class="side"><div class="price">' + d.price + '</div><div class="kcal">' + d.kcal + ' kcal</div></div>';
+    lists[d.s].appendChild(a);
+  });
+
+  function apply(f) {
+    var n = 0;
+    document.querySelectorAll('.dish').forEach(function (el) {
+      var show = f === 'todos' || el.dataset.group === f;
+      el.hidden = !show;
+      if (show) n++;
+    });
+    Object.keys(groups).forEach(function (k) {
+      groups[k].hidden = !groups[k].querySelector('.dish:not([hidden])');
+    });
+    count.textContent = n === 1 ? 'Mostrando 1 plato' : 'Mostrando ' + n + ' platos';
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.filter === f ? 'true' : 'false'); });
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.filter); }); });
+  apply('todos');
+})();
+</script>
+
+</body></html>
